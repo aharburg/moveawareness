@@ -3,14 +3,15 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 10s linear;
   height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color: #3399ff;
+  width: 100%;
+  padding-bottom: 10%;
+  padding-top: 2%;
   color: white;
 }
 
@@ -25,4 +26,132 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.correctResponse{
+  animation-name: correctResponseAnimation;
+  animation-duration: 4s;
+}
+
+@keyframes correctResponseAnimation{
+  from {text-shadow: #FC0 1px 0 10px;;}
+  to {text-shadow: 0;}
+}
+
+.footerControls {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+}
+
+.moveButton{
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-clip: border-box;
+  border: none;
+  cursor: pointer;
+}
+
+.moveText{
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.explanationImage{
+  width:60%;
+}
+
+.buttonUl {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 5%;
+}
+
+.listButton{
+  display: inline;
+  margin-right: 2%;
+  margin-left: 2%;
+  text-align: center;
+
+}
+
+.emojiContainer {
+  margin-left: 15%;
+  width: 70%;
+  height: 70%;
+}
+
+.emoji{
+  align-self: center;
+  max-width: 30%;
+  size: auto;
+  margin: 10px;
+}
+
+.centered{
+  position: relative;
+  left:40%;
+  width: 50%;
+  height: 50%;
+  max-width: 60%;
+}
+
+.feedback{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#push {
+  background-image:url("./images/push.png");
+}
+
+#pull {
+  background-image:url("./images/pull.png");
+
+}
+
+#please {
+  background-image: url("./images/please.png");
+
+}
+
+#pain {
+  background-image: url("./images/pain.png");
+
+}
+
+#pause {
+  background-image: url("./images/pause.png");
+}
+
+#place {
+  background-image: url("./images/place.png");
+}
+
+#next {
+  background-image: url("./images/next.png");
+}
+
+
+#smile {
+  background-image: url("./images/smile.png");
+}
+
+#neutral {
+  background-image: url("./images/neutral.png");
+}
+
+#angry {
+  background-image: url("./images/angry.png");
 }
