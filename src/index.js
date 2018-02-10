@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore } from "redux";
 import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+//import promise from 'redux-promise';
 
 import reducers from './reducers'
 import App from './containers/App';
+import Home from './containers/home';
+import Explanation from './containers/explanation';
 
-import './index.css';
+import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
@@ -23,10 +27,17 @@ const createStoreWithMiddleware = applyMiddleware(updateLevel)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route path="/exercises" component={App} />
+          <Route path="/explanation" component={Explanation} />
+          <Route path="/" component={Home} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   </Provider>
   , document.querySelector('.container'));
-
 
 //store.subscribe(()=>{console.log("it changed", store.getState())})
 /*ReactDOM.render(
