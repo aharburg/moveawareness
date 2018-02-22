@@ -1,0 +1,29 @@
+if (action.type === INCORRECT){
+    return next(action);
+}
+
+console.log(makeAction(action.payload));
+return next(makeAction(action.payload));
+
+function makeAction ( payload ){
+    let x = ExerciseData[payload[0]];
+    let y = ExerciseData;
+    if( payload[1] < x.length ){
+      let newNumb = payload[1]++;
+      let nextRoundId = [payload[0], newNumb];
+      let newAction = Object.assign(action, nextRoundId);
+      console.log(newAction);
+
+      return newAction;
+    }
+
+    else if (payload[0] < y.length) {
+        let newNumb = payload[0]++;
+        let nextRoundId = [newNumb, 0];
+        let newAction = Object.assign(action, nextRoundId);
+        console.log(newAction);
+
+        return newAction;
+      }
+
+  }// End makeAction

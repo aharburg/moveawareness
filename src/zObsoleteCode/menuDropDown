@@ -1,0 +1,17 @@
+triggerLink(id){
+    return ( this.props.explainData(id),
+    this.props.go('/explanation')
+    );
+}
+
+renderDropDown(){
+  var moveArray = buttonsArray[22].options;
+
+  return moveArray.map((move)=>(<MenuItem
+    key={moveArray.indexOf(move)}
+    onClick={()=>this.triggerLink(move)} >
+      <img src={`./images/${move}.png`} alt={move} className="moveImage" />
+        {move}
+  </MenuItem>
+))
+}//End Render Drop Downs

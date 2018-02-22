@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { applyMiddleware, createStore } from "redux";
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 //import promise from 'redux-promise';
+import { Router } from 'react-router';
 
-import reducers from './reducers'
+import reducers from './reducers';
 import App from './containers/App';
 import Home from './containers/home';
 import Explanation from './containers/explanation';
+
+import createHistory from 'history/createBrowserHistory';
+
+import { routerMiddleware } from 'react-router-redux';
 
 import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,25 +25,36 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 const updateLevel = (store) => (next) => (action) => {
   console.log(action.payload);
   console.log(store.getState())
+
 next(action);
 }//updateLevel middleware
 
-const createStoreWithMiddleware = applyMiddleware(updateLevel)(createStore);
+
+const history = createHistory()//Imported function
+
+const middleware = routerMiddleware(history)//An imported function
+
+const store = createStore(
+  reducers,
+  applyMiddleware(middleware, updateLevel)
+)
+
+//const createStoreWithMiddleware = applyMiddleware(middleware, updateLevel)(createStore);
 ////////////////////////middleware
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <BrowserRouter>
-      <div>
+  <Provider store={store}>
+    <Router history={history}>
         <Switch>
           <Route path="/exercises" component={App} />
           <Route path="/explanation" component={Explanation} />
           <Route path="/" component={Home} />
         </Switch>
-      </div>
-    </BrowserRouter>
-  </Provider>
-  , document.querySelector('.container'));
+      </Router>
+
+  </Provider>,
+  document.querySelector('.container')
+);
 
 //store.subscribe(()=>{console.log("it changed", store.getState())})
 /*ReactDOM.render(

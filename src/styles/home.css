@@ -1,0 +1,32 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crete Round', serif;
+}
+
+.home {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  height: 100%;
+}
+
+.largeBtn {
+  color: white;
+  font-size: 30px;
+  font-family: 'Crete Round', serif;
+}
+
+.smallBtn{
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.formatted{
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
+.centered {
+  object-position: center;
+  text-align: center;
+}
