@@ -5,9 +5,11 @@ export const RESET = 'RESET';
 export const CLICK = 'CLICK';
 export const EXPLANATION = 'EXPLANATION';
 export const DEFAULT = 'DEFAULT';
+export const SPREADSHEET_REQUEST = 'SPREADSHEET_REQUEST'
+export const SPREADSHEET_RECEIVED = 'SPREADSHEET_RECEIVED'
+export const SPREADSHEET_FAILED = 'SPREADSHEET_FAILED'
+
 //Action Types
-
-
 //////////////////////////////////////////////////Action creators
 export function correctResponse(id){
   return {
@@ -59,5 +61,31 @@ export function explainData(move){
 export function explainDefault(){
   return{
     type: DEFAULT
+  }
+}
+
+///////////////////////////////Spreadsheets
+
+export function requestSpreadsheet() {
+  return {
+    type: SPREADSHEET_REQUEST
+  }
+}
+
+export function receiveSpreadsheet(data) {
+  return {
+    type: SPREADSHEET_RECEIVED,
+    payload: {
+      data: data
+    }
+  }
+}
+
+export function receiveSpreadsheetError(error) {
+  return {
+    type: SPREADSHEET_FAILED,
+    payload: {
+      error: error
+    }
   }
 }

@@ -43,7 +43,6 @@ class Home extends Component {
             <Col sm={2} xs={0}></Col>
           </Row>
         </Grid>
-
       </div>
     )
   }

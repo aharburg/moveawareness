@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+
 import { roundReducer } from './roundReducer';
 import { scoreReducer } from './scoreReducer';
 import { levelReducer } from './levelReducer';
@@ -6,7 +8,7 @@ import { buttonsReducer } from './buttonsReducer';
 import { feedbackReducer } from './feedbackReducer';
 import { soundReducer } from './soundReducer';
 import { explainerReducer } from './explainerReducer';
-import { routerReducer } from 'react-router-redux';
+import { spreadsheetReducer } from './spreadsheetReducer'
 
 const rootReducer = combineReducers({
   round: roundReducer,
@@ -16,7 +18,8 @@ const rootReducer = combineReducers({
   feedback: feedbackReducer,
   sound: soundReducer,
   explanation: explainerReducer,
-  router: routerReducer
+  router: routerReducer,
+  sheet: spreadsheetReducer
 });
 
 export default rootReducer;

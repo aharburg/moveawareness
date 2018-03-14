@@ -9,7 +9,6 @@ render() {
     return <br />
   }
 
-
   return (
     <YoutubePlayer
       videoId={this.props.round.video}
