@@ -24,7 +24,7 @@ import "bootstrap/dist/css/bootstrap-theme.css";
 //This reducer is responsible for sending the correct media to the starte
 //It also is responsible for tracking the score
 const updateLevel = store => next => action => {
-  console.log(action.payload);
+  //console.log(action.payload);
   console.log(store.getState());
 
   next(action);
