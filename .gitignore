@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/app-config
+/awsmobilejs
+/awsmobilejs-CqBXG
 
 # testing
 /coverage
