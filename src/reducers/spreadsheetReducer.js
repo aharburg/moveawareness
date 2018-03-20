@@ -1,30 +1,27 @@
-// reducers/spreadsheet.js
-const initialState = {
-  spreadsheetData: {},
-  loading: false,
-  errorMsg: ""
-};
+var Papa = require("papaparse/papaparse.js")
 
-export function spreadsheetReducer(state = initialState, action = {}) {
+export function spreadsheetReducer(state = null, action = {}) {
   switch (action.type) {
     case "SPREADSHEET_REQUEST":
       return {
-        ...state,
-        loading: true
+        //...state,
+        loading: true,
+        data: null
       };
 
     case "SPREADSHEET_RECEIVED":
       return {
-        ...state,
+        //...state,
         loading: false,
-        spreadsheetData: action.payload.data.data,
-        errorMsg: ""
+        data: Papa.parse(action.payload.data, {header: true}),
+        //errorMsg: ""
       };
 
     case "SPREADSHEET_FAIL":
       return {
         loading: false,
-        errorMsg: action.payload.error
+        errorMsg: action.payload.error,
+        data: null
       };
     default:
       return state;
