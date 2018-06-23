@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { GetSheetDone } from 'get-sheet-done'
 
 export const CORRECT = "CORRECT";
@@ -92,10 +93,7 @@ export function receiveSpreadsheetError(error) {
   };
 }
 
-
-//let URLS =
-//"https://docs.google.com/spreadsheets/d/e/2PACX-1vSJ1TQJzBcK0o0nvk8HHvYZlOO_n9DClLEib6-lm7S6DH-POSNsTPBARVDqiZkvaKsxjro4b9yQqpGO/pub?gid=0&single=true&output=csv";
-
+// eslint-disable-next-line
 let SheetId = '1coZh_S_FWxN16BYP5mXowwbOq9gaMQCcdUE8hkWZEsU'
 
 // --- API ---
