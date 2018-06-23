@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "eslint": "^5.0.0",
     "get-sheet-done": "^0.1.4",
     "google-auth-library": "^0.12.0",
     "google-spreadsheet": "^2.0.4",
