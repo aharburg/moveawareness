@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ProgressBar extends Component{
   render(){
       let progressNum = calculator(this.props.current, this.props.total)
-      console.log(this.props.current);
+      console.log(this.props.current);//Assign percentage
     return (
         <div className="progressBarContainer ">
           <div className="progress">
@@ -18,10 +18,10 @@ class ProgressBar extends Component{
     )
   }
 }
-
+//This function calculates the percentage
 function calculator(current, total){
   return (current > 1 ? Math.round((current/total) * 100): 0)
-
+//If greater than one, return percentage
 }
 
 export default ProgressBar;
